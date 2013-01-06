@@ -2,6 +2,7 @@
   <div class="container">
   <% if signed_in? %>
     <%= link_to "Sign out", signout_path, method: "delete" %>
+    <%= link_to "Settings", edit_user_path(current_user) %>
   <% else %>
     <%= link_to "Sign in", signin_path %>
   <% end %>
