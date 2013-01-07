@@ -6,6 +6,38 @@
   box-sizing: border-box;
 }
 
+/* application index */
+
+$darkOrange: #e84e0e;
+$lightOrange: #fb9d00;
+
+#logo-index {
+  text-align: center;
+}
+
+.logo {
+  margin-right: -100px;
+  padding-bottom: 10px;
+}
+
+.signin-link {
+  background-color: $darkOrange;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 34px;
+  margin-right: 16px;
+  padding: 6px 12px;
+  width: 60px;
+  &:hover {
+    background-color: $lightOrange;
+    color: white;
+    text-decoration: none;
+  }
+}
+
 /* miscellaneous */
 
 .debug_dump {

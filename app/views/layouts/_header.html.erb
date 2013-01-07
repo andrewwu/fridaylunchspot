@@ -1,10 +1,17 @@
 <header>
-  <div class="container">
-  <% if signed_in? %>
-    <%= link_to "Sign out", signout_path, method: "delete" %>
-    <%= link_to "Settings", edit_user_path(current_user) %>
-  <% else %>
-    <%= link_to "Sign in", signin_path %>
-  <% end %>
-</div>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div id="logo-index" class="container">
+        <a href="/">
+          <img class="logo" src="/assets/logo.png" alt="FridayLunchSpot">
+        </a>
+        <% if signed_in? %>
+          <%= link_to "Sign out", signout_path, method: "delete" %>
+          <%= link_to "Settings", edit_user_path(current_user) %>
+        <% else %>
+          <%= link_to "Sign in", signin_path, class: "signin-link pull-right" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </header>
