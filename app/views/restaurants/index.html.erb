@@ -1,0 +1,11 @@
+<% provide(:title, 'Restaurants') %>
+
+<%= link_to "Add a restaurant", new_restaurant_path %>
+
+<h1>Restaurants</h1>
+<%= render @restaurants %>
+
+<% if @unapproved_restaurants.count > 0 %>
+<h2>Unapproved Restaurants (<%= @unapproved_restaurants.count %>)</h1>
+<%= render @unapproved_restaurants %>
+<% end %>

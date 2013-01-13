@@ -1,0 +1,9 @@
+<div>
+  <%= restaurant.name %> 
+  <% if current_user.admin? %>
+  <%= link_to "edit", edit_restaurant_path(restaurant) %>
+  <%= link_to "delete", restaurant, method: :delete,
+                                   data: { confirm: "You sure?" },
+                                   title: restaurant.name %>
+  <% end %>                                     
+</div>

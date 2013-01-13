@@ -6,8 +6,9 @@
           <img class="logo" src="/assets/logo.png" alt="FridayLunchSpot">
         </a>
         <% if signed_in? %>
-          <%= link_to "Sign out", signout_path, method: "delete" %>
+          <%= link_to "Restaurants", restaurants_path %>
           <%= link_to "Settings", edit_user_path(current_user) %>
+          <%= link_to "Sign out", signout_path, method: "delete" %>
         <% else %>
           <%= link_to "Sign in", signin_path, class: "signin-link pull-right" %>
         <% end %>

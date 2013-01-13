@@ -1,0 +1,25 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :address1, "Address" %>
+<%= f.text_field :address1 %>
+<%= f.text_field :address2 %>
+
+<%= f.label :city %>
+<%= f.text_field :city %>
+
+<%= f.label :state %>
+<%= f.text_field :state %>
+
+<%= f.label :zip %>
+<%= f.text_field :zip %>
+
+<%= f.label :phone %>
+<%= f.text_field :phone %>
+
+<% if current_user.admin? %>
+  <%= f.label :approved %>
+  <%= f.check_box :approved %>
+<% end %>
