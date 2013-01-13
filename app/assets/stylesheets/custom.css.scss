@@ -12,7 +12,11 @@ $darkOrange: #e84e0e;
 $lightOrange: #fb9d00;
 
 body {
-  background-image: url('bg.png');
+  background: url('sunset.jpg') no-repeat center center fixed;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* header */
