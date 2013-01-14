@@ -9,10 +9,10 @@
 /* application */
 
 $darkOrange: #e84e0e;
-$lightOrange: #fb9d00;
+$lightOrange: #f39800;
 
 body {
-
+  color: #555555;
 }
 
 /* header */
@@ -32,16 +32,14 @@ body {
   box-shadow: none;
 }
 
-.signin-link {
+.signin {
   background-color: $darkOrange;
   border: 2px solid white;
   color: white;
   font-size: 15px;
   font-weight: bold;
   margin-top: 20px;
-  padding: 6px 12px;
-  text-align: center;
-  width: 60px;
+  padding: 6px 16px;
   &:hover {
     background-color: $lightOrange;
     color: white;
@@ -52,7 +50,48 @@ body {
 /* index */
 
 #main {
+  text-align: center;
+  width: 100%;
+}
 
+.light-gray {
+  background-color: #777777;
+  color: white;
+}
+
+.gray {
+  background-color: #333333;
+  color: white;
+}
+
+.home-section {
+  padding: 40px 0;
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.signup {
+  background-color: $darkOrange;
+  border: 2px solid white;
+  color: white;
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 30px auto 0;
+  padding: 12px 16px;
+  width: 100px;
+  &:hover {
+    background-color: $lightOrange;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* footer */
+
+footer {
+  margin: 10px 0;
 }
 
 /* miscellaneous */
