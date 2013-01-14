@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109045605) do
+ActiveRecord::Schema.define(:version => 20130113204301) do
 
   create_table "restaurants", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(:version => 20130109045605) do
     t.datetime "updated_at",                    :null => false
     t.boolean  "approved",   :default => false
   end
+
+  create_table "spots", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "restaurant_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "spots", ["restaurant_id"], :name => "index_spots_on_restaurant_id"
+  add_index "spots", ["user_id", "restaurant_id"], :name => "index_spots_on_user_id_and_restaurant_id", :unique => true
+  add_index "spots", ["user_id"], :name => "index_spots_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

@@ -1,8 +1,12 @@
 Fridaylunchspot::Application.routes.draw do
+  get "spots/create"
+
+  get "spots/destroy"
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :restaurants, only: [:index, :new, :create, :edit, :update, 
-                                 :destroy]
+  resources :restaurants
+  resources :spots, only: [:create, :destroy]
 
   root to: 'static_pages#home'
 

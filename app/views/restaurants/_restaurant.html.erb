@@ -1,5 +1,5 @@
 <div>
-  <%= restaurant.name %> 
+  <%= link_to restaurant.name, restaurant_path(restaurant) %> 
   <% if current_user.admin? %>
   <%= link_to "edit", edit_restaurant_path(restaurant) %>
   <%= link_to "delete", restaurant, method: :delete,

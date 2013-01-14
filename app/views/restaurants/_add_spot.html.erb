@@ -1,0 +1,5 @@
+<%= form_for(current_user.spots.build(restaurant_id: @restaurant.id),
+             remote: true) do |f| %>
+  <div><%= f.hidden_field :restaurant_id %></div>
+  <%= f.submit "Add spot", class: "btn btn-large btn-primary" %>
+<% end %>

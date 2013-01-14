@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
                   :password_confirmation
   has_secure_password                
 
+  has_many :spots, dependent: :destroy
+  has_many :selected_spots, through: :spots, source: :restaurant
+
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 
@@ -29,6 +32,18 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
+
+  def add_spot!(restaurant)
+    spots.create!(restaurant_id: restaurant.id)
+  end
+
+  def remove_spot!(spot)
+    spot.destroy
+  end
+
+  def has_spot?(restaurant)
+    spots.find_by_restaurant_id(restaurant.id)
+  end
 
   private
 

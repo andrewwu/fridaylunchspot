@@ -32,6 +32,7 @@ describe Restaurant do
   it { should respond_to(:zip) }
   it { should respond_to(:phone) }
   it { should respond_to(:approved) }
+  it { should respond_to(:users) }
 
   it { should be_valid } 
   it { should_not be_approved }

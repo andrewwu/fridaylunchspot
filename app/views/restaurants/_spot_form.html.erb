@@ -1,0 +1,7 @@
+<div id="spot-form">
+<% if current_user.has_spot?(@restaurant) %>
+  <%= render 'remove_spot' %>
+<% else %>
+  <%= render 'add_spot' %>
+<% end %>
+</div>

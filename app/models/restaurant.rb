@@ -18,6 +18,9 @@ class Restaurant < ActiveRecord::Base
   attr_accessible :address1, :address2, :city, :name, :phone, :state, :zip,
                   :approved
 
+  has_many :spots, dependent: :destroy
+  has_many :users, through: :spots, source: :user
+
   validates :name, presence: true, length: { maximum: 255 }
   validates :address1, presence: true, length: { maximum: 255 }
   validates :address2, length: { maximum: 255 }

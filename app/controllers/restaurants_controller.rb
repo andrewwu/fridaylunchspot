@@ -1,10 +1,15 @@
 class RestaurantsController < ApplicationController
-  before_filter :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :signed_in_user, only: [:index, :show, :new, :create, :edit, 
+                                        :update, :destroy]
   before_filter :admin_user, only: [:edit, :update, :destroy]
 
   def index
     @restaurants = Restaurant.where(approved: true)
     @unapproved_restaurants = Restaurant.where(approved: false)
+  end
+
+  def show
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def new

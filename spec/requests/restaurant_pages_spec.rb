@@ -19,6 +19,39 @@ describe "Restaurant pages" do
       it { should have_selector('title', text: 'Restaurants') }
       it { should_not have_link('delete') }
       it { should_not have_link('edit') }
+
+      describe "add/remove spot buttons" do
+        let(:restaurant) { FactoryGirl.create(:restaurant) } 
+        before do
+          visit restaurant_path(restaurant)
+        end
+
+        describe" adding a spot" do
+          it "should increment the user spot count" do
+            expect do
+              click_button "Add spot"
+            end.to change(user.spots, :count).by(1)
+          end
+        end
+
+        describe "toggling the button" do
+          before { click_button "Add spot" }
+          it { should have_selector('input', value: 'Remove spot') }
+        end
+
+        describe "removing a spot" do
+          before do
+            user.add_spot!(restaurant)
+            visit restaurant_path(restaurant)
+          end
+
+          it "should decrement the user spot count" do
+            expect do
+              click_button "Remove spot"
+            end.to change(user.spots, :count).by(-1)
+          end
+        end
+      end
     end
 
     describe "as an admin user" do
@@ -124,6 +157,7 @@ describe "Restaurant pages" do
 
   describe "destroy" do
     before do
+      FactoryGirl.create(:restaurant)
       sign_in admin
       visit restaurants_path
     end
