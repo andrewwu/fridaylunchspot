@@ -8,6 +8,7 @@
         <% if signed_in? %>
           <%= link_to "Restaurants", restaurants_path %>
           <%= link_to "Settings", edit_user_path(current_user) %>
+          <%= link_to "Profile", user_path(current_user) %>
           <%= link_to "Sign out", signout_path, method: "delete" %>
         <% else %>
           <%= link_to "Sign in", signin_path, class: "signin-link pull-right" %>

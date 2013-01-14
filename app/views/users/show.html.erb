@@ -1,2 +1,11 @@
 <%= provide(:title, "#{@user.first_name} #{@user.last_name}") %>
 <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+
+<h2>My Spots</h2>
+<% @user.selected_spots.each do |spot| %>
+  <div><%= spot.name %></div>
+<% end %>
+
+<% if @user.selected_spots.count == 0 %>
+  No spots
+<% end %>
