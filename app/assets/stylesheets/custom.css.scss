@@ -8,22 +8,27 @@
 
 /* application */
 
-body {
-  background-image: url('bg.png');
-}
-
-/* index */
-
 $darkOrange: #e84e0e;
 $lightOrange: #fb9d00;
 
-#logo-index {
-  text-align: center;
+body {
+  background: url('sunset.jpg') no-repeat center center fixed;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.logo {
-  margin-right: -100px;
-  padding-bottom: 10px;
+/* header */
+
+.navbar-inner {
+  background-color: white;
+  background-image: none;
+  border: 1px solid #d1d1d1;
+}
+
+.navbar .brand {
+  padding: 5px 20px 10px;
 }
 
 .signin-link {
@@ -33,15 +38,23 @@ $lightOrange: #fb9d00;
   color: white;
   font-size: 15px;
   font-weight: bold;
-  margin-top: 34px;
-  margin-right: 16px;
+  margin-top: 30px;
   padding: 6px 12px;
+  text-align: center;
   width: 60px;
   &:hover {
     background-color: $lightOrange;
     color: white;
     text-decoration: none;
   }
+}
+
+/* index */
+
+#main {
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 10px #777777;
+  margin-top: 135px;
 }
 
 /* miscellaneous */

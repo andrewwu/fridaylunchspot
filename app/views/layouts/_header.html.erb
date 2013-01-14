@@ -1,9 +1,9 @@
 <header>
-  <div class="navbar">
+  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-      <div id="logo-index" class="container">
-        <a href="/">
-          <img class="logo" src="/assets/logo.png" alt="FridayLunchSpot">
+      <div class="container">
+        <a class="brand" href="/">
+          <img src="/assets/logo.png" alt="FridayLunchSpot">
         </a>
         <% if signed_in? %>
           <%= link_to "Restaurants", restaurants_path %>
